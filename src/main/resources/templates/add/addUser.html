@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MySpringApp</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+<h1>User</h1>
+<form action="#" th:action="@{/user}" th:object="${user}" method="post">
+
+    <table>
+        <tr>
+            <td>Last name: </td>
+            <td><input type="text" th:field="*{lastName}"/></td>
+            <td  th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"> </td>
+        </tr>
+        <tr>
+            <td>First name: </td>
+            <td><input type="text" th:field="*{firstName}"/></td>
+            <td  th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"> </td>
+        </tr>
+
+        <tr>
+            <td>Middle name: </td>
+            <td><input type="text" th:field="*{middleName}"/></td>
+            <td  th:if="${#fields.hasErrors('middleName')}" th:errors="*{middleName}"> </td>
+        </tr>
+        <tr>
+            <td>Age: </td>
+            <td><input type="text" th:field="*{age}"/></td>
+            <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}"> </td>
+        </tr>
+        <tr>
+            <td>Salary: </td>
+            <td><input type="text" th:field="*{salary}"/></td>
+            <td  th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"> </td>
+        </tr>
+        <tr>
+            <td>Email: </td>
+            <td><input type="text" th:field="*{email}"/></td>
+            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"> </td>
+        </tr>
+        <tr>
+            <td>Work: </td>
+            <td><input type="text" th:field="*{placeOfWork}"/></td>
+            <td  th:if="${#fields.hasErrors('placeOfWork')}" th:errors="*{placeOfWork}"> </td>
+        </tr>
+
+    </table>
+
+    <p><input type="submit" value="Submit"/>
+        <input type="reset" value="Reset"/></p>
+
+    <p><input type="button" value="Find user" onclick="window.location.href='/find'"/>
+        <input type="button" value="Send email" onclick="window.location.href='/send'"/>
+        <input type="button" value="Upload" onclick="window.location.href='/upload'"/></p>
+
+</form>
+</body>
+</html>
+

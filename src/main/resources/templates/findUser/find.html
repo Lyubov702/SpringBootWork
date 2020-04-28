@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MySpringApp</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+<h1>Find user</h1>
+<form action="#" th:action="@{/find}" th:object="${user}" method="post">
+
+    <table>
+        <tr>
+            <td>Last name: </td>
+            <td><input type="text" th:field="*{lastName}"/></td>
+            <td  th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"> </td>
+        </tr>
+        <tr>
+            <td>First name: </td>
+            <td><input type="text" th:field="*{firstName}"/></td>
+        </tr>
+    </table>
+
+    <p><input type="submit" value="Submit"/>
+        <input type="reset" value="Reset"/></p>
+    <p>
+        <input type="button" value="Add user" onclick="window.location.href='/user'"/>
+    </p>
+
+</form>
+</body>
+</html>

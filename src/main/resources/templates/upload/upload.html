@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>MySpringApp</title>
+</head>
+<body>
+<h2>Choose the file </h2>
+<br/>
+<form th:action="@{/upload}" enctype="multipart/form-data" method="post">
+
+    <p>
+        <input type="file" name="file" value="Upload file"/>
+        <input type="submit" value="Submit">
+    </p>
+
+
+    <input type="button" value="Back to user form" onclick="window.location.href='/user'"/>
+
+</form>
+</body>
+</html>

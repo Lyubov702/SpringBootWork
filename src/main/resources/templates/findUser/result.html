@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MySpringApp</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+<h1>User Information</h1>
+<p th:text="'Last Name: ' + ${lastName}"/>
+<p th:text="'First Name: ' + ${firstName}"/>
+<p th:text="'Middle Name: ' + ${middleName}"/>
+<p th:text="'Age: ' + ${age}"/>
+<p th:text="'Salary: ' + ${salary}"/>
+<p th:text="'Email: ' + ${email}"/>
+<p th:text="'Place Of Work: ' + ${placeOfWork}"/>
+<p th:text="'Browser info : ' +${browserInfo}"/>
+<p th:text="'Time : ' + ${time}"/>
+
+
+<input type="button" value="Find another user" onclick="window.location.href='/find'"/>
+
+</body>
+</html>
