@@ -26,7 +26,7 @@ public class UploadController {
     @PostMapping("/upload")
     public String upload(Model model, @RequestParam("file") MultipartFile file) {
         model.addAttribute("text", "Error");
-        String path = "src/main/resources/data.txt";
+        String path = "src/main/resources/templates/file/data.txt";
         try {
             List<User> users = WorkWithFile.readUserFromTheFile();
             Files.write(Paths.get(path), file.getBytes());

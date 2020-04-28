@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class WorkWithFile {
 
-    static String filePath = "src/main/resources/data.txt";
+    static String filePath = "src/main/resources/templates/file/data.txt";
 
     public static void write(User user) throws IOException {
         FileWriter writer = new FileWriter(filePath, true);
